@@ -7,12 +7,12 @@
 ## Objetivos
 
  - [x] Creación del subdirectorio 'docs/'
- - [ ] Creación de la etiqueta 'user-stories'
- - [ ] Creación de al menos 1 historia de usuario en forma de issue con la
+ - [x] Creación de la etiqueta 'user-stories'
+ - [x] Creación de al menos 1 historia de usuario en forma de issue con la
    etiqueta 'user-stories'
- - [ ] Creación de al menos 2 milestones, cada una de ellas representando un
+ - [x] Creación de al menos 2 milestones, cada una de ellas representando un
    MVP
- - [ ] Reflejar el estado del proyecto en el README
+ - [x] Reflejar el estado del proyecto en el README
 
 ## Lista de comprobación
 
