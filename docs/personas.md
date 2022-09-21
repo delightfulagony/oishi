@@ -22,7 +22,7 @@ Trabaja las mañanas y cuida de su anciana madre en casa, quiere que tanto elle
 como su madre coman sano pero no tiene mucho presupuesto, su madre odia las
 berenjenas.
 
-## Nayra Bernal (Ella)
+## Virginia Caballero (Ella)
 
 Directora de ventas de Coviran, quiere saber qué productos quiere comprar la
 gente para diseñar una estrategia de ventas acorde.
