@@ -34,7 +34,7 @@
 - [x]  ¿Los milestones son mínimos, es decir, incluyen un producto
    mínimamente viable para poder avanzar?
 - [x]  ¿El milestone 0 es mínimo *y* viable?
-- [ ]  ¿Se indica claramente cómo comprobar la viabilidad del PMV de cada hito?
+- [x]  ¿Se indica claramente cómo comprobar la viabilidad del PMV de cada hito?
     Es decir, ¿se dice qué requisitos técnicos tiene que cumplir el producto de
     cada hito?
 - [x] ¿Entre dos milestones consecutivos, no hay ningún PMV posible o por el
@@ -44,7 +44,7 @@
    proyecto que se desplegará en la nube?
 - [ ] ¿Están descritos todos los conceptos mencionados en las HUs con
    suficiente claridad, generalmente en documentos aparte?
-- [ ] ¿Tienen coherencia suficiente las historias de usuario, y en caso
+- [x] ¿Tienen coherencia suficiente las historias de usuario, y en caso
    de que no lo tengan, se ha escrito un *user journey* para
    aclararlo?
 - [x] ¿Todas las historias de usuario representan un beneficio para el
