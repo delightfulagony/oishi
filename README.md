@@ -1,8 +1,14 @@
 # Oishi
 
 [![AGPLv3 Licensed](https://img.shields.io/static/v1?logo=git&style=for-the-badge&label=license&message=AGPL&color=green)](LICENSE.md)
+[![Development](https://img.shields.io/static/v1?logo=git&style=for-the-badge&label=state&message=pre-pre-alpha&color=red)](https://github.com/delightfulagony/oishi/issues)
 
 Un planificador semanal de comidas.
+
+## Estado del proyecto
+
+Pre-pre-Alpha. Se han definido algunas historias de usuario e hitos que suponen
+MVPs.
 
 ## Problema a solucionar
 La elección de las comidas para una persona o un grupo de personas.
