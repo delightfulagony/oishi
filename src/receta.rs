@@ -1,6 +1,6 @@
 use std::time::Duration;
-use crate::types::info_nutricional::InfoNutricional;
-use crate::types::ingrediente::Ingrediente;
+use crate::info_nutricional::InfoNutricional;
+use crate::ingrediente::Ingrediente;
 
 pub(crate) struct Receta {
     pub(crate) nombre: String,

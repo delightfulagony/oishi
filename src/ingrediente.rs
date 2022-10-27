@@ -1,4 +1,4 @@
-use crate::types::info_nutricional::InfoNutricional;
+use crate::info_nutricional::InfoNutricional;
 
 pub(crate) struct Ingrediente {
     pub(crate) nombre: String,
