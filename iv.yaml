@@ -1,2 +1,5 @@
 lenguaje: rust
 entidad: [oishi/src/types/ingrediente.rs, oishi/src/types/receta.rs, oishi/src/types/info_nutricional.rs]
+automatizar:
+  fichero: justfile
+  orden: just
