@@ -10,6 +10,12 @@ Un planificador semanal de comidas.
 El programa tiene como objetivo generar un planning de comidas para una persona
 o grupo de personas, adecuándose a sus necesidades.
 
+## Comprobar el código
+Para comprobar que el código del proyecto es correcto ejecutar:
+```sh
+just check
+```
+
 ## Estado del proyecto
 #### Pre-pre-Alpha.
 
