@@ -1,7 +1,7 @@
 mod info_nutricional;
 mod ingrediente;
 mod receta;
-mod menu_dia;
+mod plan_dia;
 
 fn main() {
     println!("Hello, world!");
