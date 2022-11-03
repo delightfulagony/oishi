@@ -3,3 +3,4 @@ entidad: [oishi/src/types/ingrediente.rs, oishi/src/types/receta.rs, oishi/src/t
 automatizar:
   fichero: justfile
   orden: just
+test: src/info_nutricional.rs
