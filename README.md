@@ -16,6 +16,12 @@ Para comprobar que el código del proyecto es correcto ejecutar:
 just check
 ```
 
+## Ejecutar los tests
+Para ejecutar los tests con just:
+```sh
+just test
+```
+
 ## Estado del proyecto
 #### Pre-pre-Alpha.
 
