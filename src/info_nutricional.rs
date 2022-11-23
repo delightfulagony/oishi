@@ -50,8 +50,7 @@ impl AddAssign for InfoNutricional {
 mod tests {
     use super::*;
 
-    #[test]
-    fn suma_nutrientes() {
+    fn setup_objects() -> (InfoNutricional, InfoNutricional) {
         let a = InfoNutricional {
             calorias: 1,
             grasas: 1.1,
@@ -64,6 +63,12 @@ mod tests {
             hidratos: 2.3,
             proteinas: 0.5,
         };
+        return (a, b)
+    }
+
+    #[test]
+    fn suma_nutrientes() {
+        let (a, b) = setup_objects();
         let result = a + b;
         assert_eq!(result.calorias, 2);
         assert_eq!(result.grasas, 2.2);
@@ -73,18 +78,7 @@ mod tests {
 
     #[test]
     fn suma_iguala_nutrientes() {
-        let mut a = InfoNutricional {
-            calorias: 1,
-            grasas: 1.1,
-            hidratos: 2.2,
-            proteinas: 0.5,
-        };
-        let b = InfoNutricional {
-            calorias: 1,
-            grasas: 1.1,
-            hidratos: 2.3,
-            proteinas: 0.5,
-        };
+        let (mut a, b) = setup_objects();
         a += b;
         assert_eq!(a.calorias, 2);
         assert_eq!(a.grasas, 2.2);
