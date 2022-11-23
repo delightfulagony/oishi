@@ -1,4 +1,4 @@
-use std::time::Duration;
+use chrono::Duration;
 use crate::info_nutricional::InfoNutricional;
 use crate::ingrediente::Ingrediente;
 
