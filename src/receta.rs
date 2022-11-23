@@ -2,7 +2,7 @@ use time::Duration;
 use crate::info_nutricional::InfoNutricional;
 use crate::ingrediente::Ingrediente;
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub(crate) struct Receta {
     pub(crate) nombre: String,
     pub(crate) tiempo: Duration,
