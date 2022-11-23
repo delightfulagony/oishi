@@ -1,6 +1,20 @@
 use std::ops::{Add,AddAssign};
 
-#[derive(Default, Copy, Clone)]
+/* Default permite inicializar la estructura a los valores por defecto
+ * de los tipos de dato implicados.
+ *
+ * Clone permite hacer una copia de la estructura por medio de clonar cada
+ * elemento, también permite sobrecarga.
+ *
+ * Copy permite hacer una copia a nivel de bits de la estructura, esto es
+ * posible porque los tipos de datos implicados son sencillos y no contienen
+ * punteros ni nada que vaya a causar problemas al hacer una copia de bits.
+ * Copy depende de clone, por tanto para implementar copy es necesario
+ * implementar clone.
+ * ["The Copy trait is a subtrait of Clone, so you always need to implement
+ * Clone if you implement Copy"](https://stackoverflow.com/questions/30782836/the-trait-clone-is-is-not-implemented-when-deriving-the-trait-copy-for-enum)
+ */
+#[derive(Default, Clone, Copy)]
 pub(crate) struct InfoNutricional {
     pub(crate) calorias: u16,
     pub(crate) grasas: f32,
