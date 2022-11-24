@@ -1,4 +1,4 @@
-use std::ops::{Add,AddAssign};
+use std::ops::{Add,AddAssign,Mul};
 use std::iter::Sum;
 
 /* Default permite inicializar la estructura a los valores por defecto
@@ -44,6 +44,19 @@ impl AddAssign for InfoNutricional {
             hidratos: self.hidratos + other.hidratos,
             proteinas: self.proteinas + other.proteinas,
         };
+    }
+}
+
+impl Mul<u16> for InfoNutricional {
+    type Output = Self;
+
+    fn mul(self, rhs: u16) -> Self::Output {
+        Self {
+            calorias: self.calorias*(rhs/100),
+            grasas: self.grasas*(rhs as f32/100.0),
+            hidratos: self.hidratos*(rhs as f32/100.0),
+            proteinas: self.proteinas*(rhs as f32/100.0),
+        }
     }
 }
 
@@ -106,6 +119,16 @@ mod tests {
         assert_eq!(a.grasas, 2.2);
         assert_eq!(a.hidratos, 4.5);
         assert_eq!(a.proteinas, 1.0);
+    }
+
+    #[test]
+    fn multiplica_nutrientes() {
+        let (a, _) = setup_objects();
+        let result = a * 200;
+        assert_eq!(result.calorias, a.calorias*2);
+        assert_eq!(result.grasas, a.grasas*2.0);
+        assert_eq!(result.hidratos, a.hidratos*2.0);
+        assert_eq!(result.proteinas, a.proteinas*2.0);
     }
 
     #[test]
