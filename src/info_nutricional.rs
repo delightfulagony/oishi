@@ -23,6 +23,10 @@ pub(crate) struct InfoNutricional {
     pub(crate) proteinas: f32,
 }
 
+/// El operador de suma `+`
+///
+/// Permite sumar dos objetos de InfoNutricional y obtiene el resultado de
+/// sumar cada una de sus componentes individualmente.
 impl Add for InfoNutricional {
     type Output = Self;
 
@@ -36,6 +40,10 @@ impl Add for InfoNutricional {
     }
 }
 
+/// El operador de suma con asignación `+=`
+///
+/// Permite sumar dos objetos de InfoNutricional y asigna el resultado de
+/// sumar cada una de sus componentes individualmente al primer objeto.
 impl AddAssign for InfoNutricional {
     fn add_assign(&mut self, other: Self) {
         *self = Self {
@@ -47,6 +55,10 @@ impl AddAssign for InfoNutricional {
     }
 }
 
+/// El operador de multiplicación `*`
+///
+/// Permite multiplicar un objeto InfoNutricional por un número de gramos y
+/// devuelve la información nutricional para esa cantidad concreta.
 impl Mul<u16> for InfoNutricional {
     type Output = Self;
 
@@ -60,6 +72,9 @@ impl Mul<u16> for InfoNutricional {
     }
 }
 
+/// La función sumatoria
+///
+/// Permite realizar una sumatoria a partir de un iterador de InfoNutricional
 impl<'a> Sum<&'a Self> for InfoNutricional {
     fn sum<I>(iter: I) -> Self
     where
