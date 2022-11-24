@@ -1,4 +1,5 @@
 use std::ops::{Add,AddAssign};
+use std::iter::Sum;
 
 /* Default permite inicializar la estructura a los valores por defecto
  * de los tipos de dato implicados.
@@ -46,6 +47,27 @@ impl AddAssign for InfoNutricional {
     }
 }
 
+impl<'a> Sum<&'a Self> for InfoNutricional {
+    fn sum<I>(iter: I) -> Self
+    where
+        I: Iterator<Item = &'a Self>,
+    {
+        iter.fold(
+            Self {
+                calorias:0,
+                grasas:0.0,
+                hidratos:0.0,
+                proteinas:0.0,
+            },
+            |a, b| Self {
+                calorias: a.calorias + b.calorias,
+                grasas: a.grasas + b.grasas,
+                hidratos: a.hidratos + b.hidratos,
+                proteinas: a.proteinas + b.proteinas,
+        })
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -84,5 +106,27 @@ mod tests {
         assert_eq!(a.grasas, 2.2);
         assert_eq!(a.hidratos, 4.5);
         assert_eq!(a.proteinas, 1.0);
+    }
+
+    #[test]
+    fn sumatoria_nutrientes() {
+        let (a, b) = setup_objects();
+        let vector = vec![a, b];
+        let result: InfoNutricional = vector.iter().sum();
+        assert_eq!(result.calorias, 2);
+        assert_eq!(result.grasas, 2.2);
+        assert_eq!(result.hidratos, 4.5);
+        assert_eq!(result.proteinas, 1.0);
+    }
+
+    #[test]
+    fn sumatoria_1_elemento_nutrientes() {
+        let (a, _) = setup_objects();
+        let vector = vec![a];
+        let result: InfoNutricional = vector.iter().sum();
+        assert_eq!(result.calorias, 1);
+        assert_eq!(result.grasas, 1.1);
+        assert_eq!(result.hidratos, 2.2);
+        assert_eq!(result.proteinas, 0.5);
     }
 }
