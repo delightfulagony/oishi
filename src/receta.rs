@@ -7,6 +7,6 @@ pub(crate) struct Receta {
     pub(crate) tiempo: Duration,
     pub(crate) tipo: Vec<String>,
     pub(crate) info_nutricional: InfoNutricional,
-    pub(crate) ingredientes: Vec<(u16, Ingrediente)>,
+    pub(crate) ingredientes: Vec<(f32, Ingrediente)>,
     pub(crate) pasos: Vec<String>,
 }

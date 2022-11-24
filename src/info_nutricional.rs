@@ -59,15 +59,15 @@ impl AddAssign for InfoNutricional {
 ///
 /// Permite multiplicar un objeto InfoNutricional por un número de gramos y
 /// devuelve la información nutricional para esa cantidad concreta.
-impl Mul<u16> for InfoNutricional {
+impl Mul<f32> for InfoNutricional {
     type Output = Self;
 
-    fn mul(self, rhs: u16) -> Self::Output {
+    fn mul(self, rhs: f32) -> Self::Output {
         Self {
-            calorias: self.calorias*(rhs/100),
-            grasas: self.grasas*(rhs as f32/100.0),
-            hidratos: self.hidratos*(rhs as f32/100.0),
-            proteinas: self.proteinas*(rhs as f32/100.0),
+            calorias: self.calorias*(rhs as u16/100),
+            grasas: self.grasas*(rhs/100.0),
+            hidratos: self.hidratos*(rhs/100.0),
+            proteinas: self.proteinas*(rhs/100.0),
         }
     }
 }
@@ -139,7 +139,7 @@ mod tests {
     #[test]
     fn multiplica_nutrientes() {
         let (a, _) = setup_objects();
-        let result = a * 200;
+        let result = a * 200.0;
         assert_eq!(result.calorias, a.calorias*2);
         assert_eq!(result.grasas, a.grasas*2.0);
         assert_eq!(result.hidratos, a.hidratos*2.0);
