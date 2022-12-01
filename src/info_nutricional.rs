@@ -100,18 +100,27 @@ impl<'a> Sum<&'a Self> for InfoNutricional {
 mod tests {
     use super::*;
 
+    const CALORIAS_A:  u16 = 1;
+    const CALORIAS_B:  u16 = 1;
+    const GRASAS_A:    f32 = 1.1;
+    const GRASAS_B:    f32 = 1.1;
+    const HIDRATOS_A:  f32 = 2.2;
+    const HIDRATOS_B:  f32 = 2.3;
+    const PROTEINAS_A: f32 = 0.5;
+    const PROTEINAS_B: f32 = 0.5;
+
     fn setup_objects() -> (InfoNutricional, InfoNutricional) {
         let a = InfoNutricional {
-            calorias: 1,
-            grasas: 1.1,
-            hidratos: 2.2,
-            proteinas: 0.5,
+            calorias: CALORIAS_A,
+            grasas: GRASAS_A,
+            hidratos: HIDRATOS_A,
+            proteinas: PROTEINAS_A,
         };
         let b = InfoNutricional {
-            calorias: 1,
-            grasas: 1.1,
-            hidratos: 2.3,
-            proteinas: 0.5,
+            calorias: CALORIAS_B,
+            grasas: GRASAS_B,
+            hidratos: HIDRATOS_B,
+            proteinas: PROTEINAS_B,
         };
         return (a, b)
     }
@@ -120,20 +129,20 @@ mod tests {
     fn suma_nutrientes() {
         let (a, b) = setup_objects();
         let result = a + b;
-        assert_eq!(result.calorias, 2);
-        assert_eq!(result.grasas, 2.2);
-        assert_eq!(result.hidratos, 4.5);
-        assert_eq!(result.proteinas, 1.0);
+        assert_eq!(result.calorias, CALORIAS_A+CALORIAS_B);
+        assert_eq!(result.grasas, GRASAS_A+GRASAS_B);
+        assert_eq!(result.hidratos, HIDRATOS_A+HIDRATOS_B);
+        assert_eq!(result.proteinas, PROTEINAS_A+PROTEINAS_B);
     }
 
     #[test]
     fn suma_iguala_nutrientes() {
         let (mut a, b) = setup_objects();
         a += b;
-        assert_eq!(a.calorias, 2);
-        assert_eq!(a.grasas, 2.2);
-        assert_eq!(a.hidratos, 4.5);
-        assert_eq!(a.proteinas, 1.0);
+        assert_eq!(a.calorias, CALORIAS_A+CALORIAS_B);
+        assert_eq!(a.grasas, GRASAS_A+GRASAS_B);
+        assert_eq!(a.hidratos, HIDRATOS_A+HIDRATOS_B);
+        assert_eq!(a.proteinas, PROTEINAS_A+PROTEINAS_B);
     }
 
     #[test]
@@ -151,10 +160,10 @@ mod tests {
         let (a, b) = setup_objects();
         let vector = vec![a, b];
         let result: InfoNutricional = vector.iter().sum();
-        assert_eq!(result.calorias, 2);
-        assert_eq!(result.grasas, 2.2);
-        assert_eq!(result.hidratos, 4.5);
-        assert_eq!(result.proteinas, 1.0);
+        assert_eq!(result.calorias, CALORIAS_A+CALORIAS_B);
+        assert_eq!(result.grasas, GRASAS_A+GRASAS_B);
+        assert_eq!(result.hidratos, HIDRATOS_A+HIDRATOS_B);
+        assert_eq!(result.proteinas, PROTEINAS_A+PROTEINAS_B);
     }
 
     #[test]
@@ -162,9 +171,9 @@ mod tests {
         let (a, _) = setup_objects();
         let vector = vec![a];
         let result: InfoNutricional = vector.iter().sum();
-        assert_eq!(result.calorias, 1);
-        assert_eq!(result.grasas, 1.1);
-        assert_eq!(result.hidratos, 2.2);
-        assert_eq!(result.proteinas, 0.5);
+        assert_eq!(result.calorias, CALORIAS_A);
+        assert_eq!(result.grasas, GRASAS_A);
+        assert_eq!(result.hidratos, HIDRATOS_A);
+        assert_eq!(result.proteinas, PROTEINAS_A);
     }
 }
