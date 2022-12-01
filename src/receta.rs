@@ -79,12 +79,16 @@ mod tests {
         let (pan, aceite) = setup_ingredientes();
         let tostada = setup_receta();
         assert_eq!(tostada.info_nutricional.calorias,
-            (pan.info_nutricional*30.0+aceite.info_nutricional*8.5).calorias);
+            (pan.info_nutricional.calorias*(30/100))
+            +(aceite.info_nutricional.calorias*(8/100)));
         assert_eq!(tostada.info_nutricional.grasas,
-            (pan.info_nutricional*30.0+aceite.info_nutricional*8.5).grasas);
+            (pan.info_nutricional.grasas*(30.0/100.0))
+            +(aceite.info_nutricional.grasas*(8.5/100.0)));
         assert_eq!(tostada.info_nutricional.hidratos,
-            (pan.info_nutricional*30.0+aceite.info_nutricional*8.5).hidratos);
+            (pan.info_nutricional.hidratos*(30.0/100.0))
+            +(aceite.info_nutricional.hidratos*(8.5/100.0)));
         assert_eq!(tostada.info_nutricional.proteinas,
-            (pan.info_nutricional*30.0+aceite.info_nutricional*8.5).proteinas);
+            (pan.info_nutricional.proteinas*(30.0/100.0))
+            +(aceite.info_nutricional.proteinas*(8.5/100.0)));
     }
 }
