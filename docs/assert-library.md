@@ -3,7 +3,7 @@
 ## TL:DR (Too Long, Don't Read)
 
 Se escoge la biblioteca de aserciones
-[`speculoos`](https://github.com/oknozor/speculoos)
+[`std::assert`](https://doc.rust-lang.org/std/macro.assert.html).
 
 ## Requisitos
 
