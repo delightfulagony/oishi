@@ -17,20 +17,20 @@ esos cambios.
 
 ## Elección
 
-Para la biblioteca de aserciones se ha escogido
-[`speculoos`](https://github.com/oknozor/speculoos)
+Para la biblioteca de aserciones se ha escogido la biblioteca de aserciones
+estándar de Rust.
+[`std::assert`](https://doc.rust-lang.org/std/macro.assert.html).
 
-Inspirada por los frameworks de aserciones "fluidos" como Google Truth,
-es un fork mantenido de [`espectral`](https://github.com/cfrancia/spectral).
-Además, la sintaxis es clara y sencilla, por lo que es fácil de usar y de leer.
 
 ## Otras opciones barajadas
 
 Se han valorado también las siguientes opciones:
 
-- La biblioteca de aserciones estándar de Rust
-[`std::assert`](https://doc.rust-lang.org/std/macro.assert.html).
-Incluye pocas funcionalidades, son aserciones "típicas", poco legibles.
+- [`speculoos`](https://github.com/oknozor/speculoos)
+Inspirada por los frameworks de aserciones "fluidos" como Google Truth,
+es un fork mantenido de [`espectral`](https://github.com/cfrancia/spectral).
+Además, la sintaxis es clara y sencilla, por lo que es fácil de usar y de leer.
+
 
 - [`more-asserts`](https://docs.rs/more-asserts/latest/more_asserts/)
 complementa la librería estándar de aserciones con algunas funcionalidades más,
