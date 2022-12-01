@@ -4,7 +4,7 @@ install:
 
 # Runs the tests
 test:
-	cargo test
+	cargo nextest run
 
 # Analyzes the program and reports errors
 check:
