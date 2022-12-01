@@ -1,10 +1,5 @@
 # Biblioteca de aserciones
 
-## TL:DR (Too Long, Don't Read)
-
-Se escoge la biblioteca de aserciones
-[`std::assert`](https://doc.rust-lang.org/std/macro.assert.html).
-
 ## Requisitos
 
 Se busca una biblioteca de aserciones que sea:

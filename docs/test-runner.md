@@ -1,9 +1,5 @@
 # Test runner
 
-## TL:DR (Too Long, Don't Read)
-
-Se escoge `nextest` como test runner
-
 ## Requisitos
 
 Se busca un test runner que:
