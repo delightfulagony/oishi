@@ -27,6 +27,7 @@ just test
 
 * Se han definido historias de usuario e hitos de desarrollo.
 * Se ha comenzado a implementar un modelo del problema.
+* Se ha definido un contenedor para la ejecución de tests del código.
 
 ## Más información
 
