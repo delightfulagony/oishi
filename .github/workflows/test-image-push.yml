@@ -1,6 +1,8 @@
 name: "Docker testing push to DockerHub"
 on:
   push:
+    branches:
+      - master
     paths:
       - "Dockerfile"
 
