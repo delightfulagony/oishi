@@ -9,3 +9,10 @@ test:
 # Analyzes the program and reports errors
 check:
 	cargo check
+
+build:
+	cargo build
+
+update:
+	cargo update
+
