@@ -21,15 +21,15 @@ WORKDIR /app
 USER tester
 
 # Update all dependencies
-COPY --chown=tester Cargo.toml justfile ./
-COPY --chown=tester src/ ./src/
-RUN just update && rm -rf src/ Cargo.toml justfile
+COPY --chown=tester Cargo.toml /app/
+COPY --chown=tester src/ /app/test/src/
+# This is to prevent cargo from complaining about the lockfile not being
+# present when running the tests
+RUN ln -s /app/test/src /app/src
+RUN cargo update && cargo generate-lockfile && rm -rf /app/test/src/
 
 # Define cargo target folder
 ENV CARGO_TARGET_DIR=/tmp/cache/
 
-# Enter working directory
-WORKDIR /app/test
-
 # Run the program
-ENTRYPOINT ["just", "test"]
+ENTRYPOINT ["cargo", "test"]
