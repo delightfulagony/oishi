@@ -1,11 +1,12 @@
 FROM rust:alpine
 
 RUN mkdir -p /app/test/ \
-	&& chown guest -R /app/
+	&& adduser -DH oishi \
+	&& chown oishi -R /app/
 
 WORKDIR /app
 
-USER guest
+USER oishi
 
 COPY Cargo.toml /app/
 RUN mkdir -p /app/src \
