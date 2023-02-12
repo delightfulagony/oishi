@@ -4,8 +4,15 @@ install:
 
 # Runs the tests
 test:
-	cargo nextest run
+	cargo test
 
 # Analyzes the program and reports errors
 check:
 	cargo check
+
+build:
+	cargo build
+
+update:
+	cargo update
+
