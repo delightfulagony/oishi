@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - "Dockerfile"
+      - "Cargo.toml"
 
 jobs:
   docker-image-test:
